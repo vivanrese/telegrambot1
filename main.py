@@ -18,13 +18,15 @@ def rules_command(update, context):
     update.message.reply_text('/topGainers -> Top Gainers \n/topLosers -> Top Losers \n/getLotSize -> Top 10 Lot Size \n')
 
 def get_lot_size_command(update, context):
-    temp = nse.get_fno_lot_sizes()
+    d = nse.get_fno_lot_sizes()
+    temp = d.values()
+    temp.sort()
     ans = ''
-    count = 0
-    for i,j in temp.items():
-        count += 1
-        ans += i+': '+str(j)+'\n'
-        if count >= 10: break
+    for i in range(10):
+        for k,v in d.items:
+            if v==i:
+                ans += k+': '+str(v)+'\n'
+
     update.message.reply_text(ans)
 
 def top_gainers_command(update, context):
