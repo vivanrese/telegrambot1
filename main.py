@@ -20,12 +20,12 @@ def rules_command(update, context):
 def top_gainers_command(update, context):
     top = nse.get_top_gainers()
     for t in top:
-        update.message.reply_text('Stock: '+t['symbol']+'\n'+'Open Price: '+t['openPrice']+'\n'+'High Price: '+t['highPrice']+'\n'+'Low Price: '+t['highPrice']+'\n')
+        update.message.reply_text('Stock: '+t['symbol']+'\n'+'Open Price: '+str(t['openPrice'])+'\n'+'High Price: '+str(t['highPrice'])+'\n'+'Low Price: '+str(t['highPrice'])+'\n')
 
 def top_losers_command(update, context):
     top = nse.get_top_losers()
     for t in top:
-        update.message.reply_text('Stock: '+t['symbol']+'\n'+'Open Price: '+t['openPrice']+'\n'+'High Price: '+t['highPrice']+'\n'+'Low Price: '+t['highPrice']+'\n')
+        update.message.reply_text('Stock: '+t['symbol']+'\n'+'Open Price: '+str(t['openPrice'])+'\n'+'High Price: '+str(t['highPrice'])+'\n'+'Low Price: '+str(t['highPrice'])+'\n')
 
 def handle_message(update, context):
     q = update.message.text.upper()
