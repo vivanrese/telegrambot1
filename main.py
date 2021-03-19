@@ -20,7 +20,7 @@ def rules_command(update, context):
 def get_lot_size_command(update, context):
     d = nse.get_fno_lot_sizes()
     temp = list(d.values())
-    temp.sort()
+    temp.sort(reverse=True)
     ans = ''
     for i in range(10):
         for k,v in d.items():
