@@ -23,7 +23,7 @@ def get_lot_size_command(update, context):
     temp.sort()
     ans = ''
     for i in range(10):
-        for k,v in d.items:
+        for k,v in d.items():
             if v==i:
                 ans += k+': '+str(v)+'\n'
 
