@@ -21,7 +21,7 @@ def get_lot_size_command(update, context):
     temp = nse.get_fno_lot_sizes()
     ans = ''
     for i,j in temp.items():
-        ans += i+': '+j+'\n'
+        ans += i+': '+str(j)+'\n'
     update.message.reply_text(ans)
 
 def top_gainers_command(update, context):
