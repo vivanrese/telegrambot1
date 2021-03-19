@@ -15,7 +15,7 @@ def help_command(update, context):
 
 
 def rules_command(update, context):
-    update.message.reply_text('/topGainers -> Top Gainers \n/topLosers -> Top Losers \n')
+    update.message.reply_text('/topGainers -> Top Gainers \n/topLosers -> Top Losers \n/getLotSize -> Top 10 Lot Size \n')
 
 def get_lot_size_command(update, context):
     temp = nse.get_fno_lot_sizes()
