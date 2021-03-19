@@ -20,8 +20,11 @@ def rules_command(update, context):
 def get_lot_size_command(update, context):
     temp = nse.get_fno_lot_sizes()
     ans = ''
+    count = 0
     for i,j in temp.items():
+        count += 1
         ans += i+': '+str(j)+'\n'
+        if count >= 10: break
     update.message.reply_text(ans)
 
 def top_gainers_command(update, context):
