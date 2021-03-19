@@ -24,7 +24,7 @@ def get_lot_size_command(update, context):
     ans = ''
     for i in range(10):
         for k,v in d.items():
-            if v==i:
+            if v==temp[i]:
                 ans += k+': '+str(v)+'\n'
 
     update.message.reply_text(ans)
