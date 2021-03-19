@@ -17,6 +17,13 @@ def help_command(update, context):
 def rules_command(update, context):
     update.message.reply_text('/topGainers -> Top Gainers \n/topLosers -> Top Losers \n')
 
+def get_lot_size_command(update, context):
+    temp = nse.get_fno_lot_sizes()
+    ans = ''
+    for i,j in temp.items():
+        ans += i+': '+j+'\n'
+    update.message.reply_text(ans)
+
 def top_gainers_command(update, context):
     top = nse.get_top_gainers()
     for t in top:
@@ -53,6 +60,7 @@ def main():
     dp.add_handler(CommandHandler("commands", rules_command))
     dp.add_handler(CommandHandler("topGainers", top_gainers_command))
     dp.add_handler(CommandHandler("topLosers", top_losers_command))
+    dp.add_handler(CommandHandler("getLotSize", get_lot_size_command))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
 
     dp.add_error_handler(error)
